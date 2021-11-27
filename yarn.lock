@@ -2460,7 +2460,7 @@ fake-xml-http-request@^2.1.2:
   resolved "https://registry.yarnpkg.com/fake-xml-http-request/-/fake-xml-http-request-2.1.2.tgz#f1786720cae50bbb46273035a0173414f3e85e74"
   integrity sha512-HaFMBi7r+oEC9iJNpc3bvcW7Z7iLmM26hPDmlb0mFwyANSsOQAtJxbdWsXITKOzZUyMYK0zYCv3h5yDj9TsiXg==
 
-faker@5.5.3:
+faker@^5.5.3:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/faker/-/faker-5.5.3.tgz#c57974ee484431b25205c2c8dc09fda861e51e0e"
   integrity sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g==
@@ -4053,7 +4053,7 @@ minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-miragejs@0.1.42:
+miragejs@^0.1.42:
   version "0.1.42"
   resolved "https://registry.yarnpkg.com/miragejs/-/miragejs-0.1.42.tgz#ff79995e3218078c1efbf8bb1a7d00667b578612"
   integrity sha512-35Gl2Pubkj/9Xk/D5/JcKJyspPWCNcpMkrlEpP0ArjQ4wKINQaFIgg5R/LW5v/yvsLpMjf9tzZuHtO3NDZeZow==
