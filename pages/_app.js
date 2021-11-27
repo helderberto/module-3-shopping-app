@@ -1,7 +1,13 @@
 /* istanbul ignore file */
 import '../styles/globals.css';
+import { makeServer } from '../miragejs/server';
 
 import Cart from '../components/cart';
+
+if (process.env.NODE_ENV === 'development') {
+  // Mirage JS code will ever reach your production build.
+  makeServer({ environment: 'development' });
+}
 
 function MyApp({ Component, pageProps }) {
   return (
