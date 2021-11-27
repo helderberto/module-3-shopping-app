@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import CartItem from './cart-item';
 
@@ -25,5 +26,48 @@ describe('<CartItem />', () => {
     expect(screen.getByText(new RegExp(product.price, 'i'))).toBeInTheDocument();
     expect(screen.getByRole('img')).toHaveProperty('src', product.image);
     expect(screen.getByRole('img')).toHaveProperty('alt', product.title);
+  });
+
+  it('should display 1 as initial quantity', () => {
+    renderCartItem();
+
+    expect(screen.getByTestId('quantity').textContent).toBe('1');
+  });
+
+  it('should increase quantity by 1 when second button is clicked', () => {
+    renderCartItem();
+
+    const [_, button] = screen.getAllByRole('button');
+
+    userEvent.click(button);
+
+    expect(screen.getByTestId('quantity').textContent).toBe('2');
+  });
+
+  it('should decrease quantity by 1 when first button is clicked', () => {
+    renderCartItem();
+
+    const [buttonDecrease, buttonIncrease] = screen.getAllByRole('button');
+    const quantity = screen.getByTestId('quantity');
+
+    userEvent.click(buttonIncrease);
+    expect(quantity.textContent).toBe('2');
+
+    userEvent.click(buttonDecrease);
+    expect(quantity.textContent).toBe('1');
+  });
+
+  it('should not go below zero in the quantity', () => {
+    renderCartItem();
+
+    const [buttonDecrease] = screen.getAllByRole('button');
+    const quantity = screen.getByTestId('quantity');
+
+    expect(quantity.textContent).toBe('1');
+
+    userEvent.click(buttonDecrease);
+    userEvent.click(buttonDecrease);
+
+    expect(quantity.textContent).toBe('0');
   });
 });
