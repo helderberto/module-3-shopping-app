@@ -22,7 +22,7 @@ describe('<ProductList />', () => {
     expect(screen.getByTestId('product-list')).toBeInTheDocument();
   });
 
-  fit('should render the ProductCard component 10 times', async () => {
+  it('should render the ProductCard component 10 times', async () => {
     server.createList('product', 10);
 
     render(<ProductList />);

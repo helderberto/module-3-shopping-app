@@ -9,10 +9,22 @@ export default function Home() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
     axios
       .get('/api/products')
-      .then((res) => setProducts(res.data.products))
-      .catch((_) => setError(true));
+      .then((res) => {
+        if (mounted) {
+          setProducts(res.data.products);
+        }
+      })
+      .catch((_) => {
+        if (mounted) {
+          setError(true);
+        }
+      });
+
+    // cleanup mounted
+    return () => (mounted = false);
   }, []);
 
   return (
