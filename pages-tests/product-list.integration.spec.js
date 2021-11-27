@@ -1,0 +1,41 @@
+import { render, screen, waitFor } from '@testing-library/react';
+
+import ProductList from '../pages/index';
+import { makeServer } from '../miragejs/server';
+
+const renderProductList = () => render(<ProductList />);
+
+describe('<ProductList />', () => {
+  let server;
+
+  beforeEach(() => {
+    server = makeServer({ environment: 'test' });
+  });
+
+  afterEach(() => {
+    server.shutdown();
+  });
+
+  it('should render ProductList component', () => {
+    renderProductList();
+
+    expect(screen.getByTestId('product-list')).toBeInTheDocument();
+  });
+
+  fit('should render the ProductCard component 10 times', async () => {
+    server.createList('product', 10);
+
+    render(<ProductList />);
+
+    await waitFor(() => {
+      expect(screen.getAllByTestId('product-card')).toHaveLength(10);
+    });
+  });
+
+  it.todo('should render the no products message');
+  it.todo('should the Search component');
+  it.todo('should filter the product list when a search is performed');
+  it.todo('should display error message when promise rejects');
+  it.todo('should display the total quantity of products');
+  it.todo('should display product (singular) when there is only 1 product');
+});
