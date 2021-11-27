@@ -1,27 +1,6 @@
-import { useState } from 'react';
-
-export default function Search({ doSearch }) {
-  const [term, setTerm] = useState('');
-
-  const submitHandler = (ev) => {
-    ev.preventDefault();
-    doSearch(term);
-  };
-
-  const inputHandler = (ev) => {
-    setTerm(ev.target.value);
-
-    if (ev.target.value === '') {
-      doSearch('');
-    }
-  };
-
+export default function Search() {
   return (
-    <form
-      onSubmit={submitHandler}
-      name="search-form"
-      className="relative mt-6 max-w-lg mx-auto"
-    >
+    <form name="search-form" className="relative mt-6 max-w-lg mx-auto">
       <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
         <svg className="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
           <path
@@ -35,8 +14,6 @@ export default function Search({ doSearch }) {
       </span>
 
       <input
-        value={term}
-        onInput={inputHandler}
         className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
         type="search"
         placeholder="Search"
