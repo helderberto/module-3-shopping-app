@@ -17,17 +17,17 @@
   "dependencies": {
     "@tailwindcss/ui": "0.7.2",
     "axios": "0.24.0",
-    "immer": "9.0.6",
-    "next": "12.0.2",
-    "postcss": "^8.3.11",
+    "immer": "9.0.7",
+    "next": "12.0.4",
+    "postcss": "^8.4.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tailwindcss": "2.2.19",
-    "zustand": "3.6.4"
+    "zustand": "3.6.5"
   },
   "devDependencies": {
-    "@testing-library/dom": "8.11.0",
-    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/dom": "8.11.1",
+    "@testing-library/jest-dom": "5.15.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@testing-library/user-event": "13.5.0",
