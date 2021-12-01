@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
 import ProductList from '../pages/index';
-import { makeServer } from '../miragejs/server';
+import { makeServer } from '../../miragejs/server';
 
 const renderProductList = () => render(<ProductList />);
 

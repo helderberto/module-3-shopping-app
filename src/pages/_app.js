@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import '../styles/globals.css';
-import { makeServer } from '../miragejs/server';
+import { makeServer } from '../../miragejs/server';
 
 import Cart from '../components/cart';
 
