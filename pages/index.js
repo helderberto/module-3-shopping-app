@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import ProductCard from '../components/product-card';
 import Search from '../components/search';
 import { useFetchProducts } from '../hooks/use-fetch-products';
