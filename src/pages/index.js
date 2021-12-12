@@ -1,7 +1,5 @@
 import { useFetchProducts } from '../hooks/use-fetch-products';
-import ProductList from '../components/product-list';
-import Search from '../components/search';
-import ServerErrorMessage from '../components/server-error-message';
+import { ProductList, Search, ServerErrorMessage } from '../components';
 
 export default function Home() {
   const { products, error } = useFetchProducts();
