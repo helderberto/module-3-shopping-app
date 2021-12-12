@@ -1,7 +1,7 @@
 import { screen, render, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Search from './search';
+import Search from '..';
 
 const doSearch = jest.fn();
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import CartItem from './cart-item';
+import CartItem from '..';
 
 const product = {
   title: 'any_product',
