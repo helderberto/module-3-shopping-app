@@ -41,7 +41,7 @@ describe('<ProductList />', () => {
     });
   });
 
-  fit('should display error message when promise rejects', async () => {
+  it('should display error message when promise rejects', async () => {
     server.get('products', () => {
       return new Response(500, {}, '');
     });
