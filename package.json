@@ -18,27 +18,27 @@
     "@tailwindcss/ui": "0.7.2",
     "axios": "^0.24.0",
     "immer": "9.0.7",
-    "next": "12.0.4",
-    "postcss": "^8.4.3",
+    "next": "12.0.7",
+    "postcss": "^8.4.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tailwindcss": "2.2.19",
-    "zustand": "3.6.5"
+    "tailwindcss": "3.0.7",
+    "zustand": "3.6.7"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.11.1",
-    "@testing-library/jest-dom": "5.15.1",
+    "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
-    "babel-jest": "27.3.1",
+    "babel-jest": "27.4.5",
     "faker": "^5.5.3",
-    "jest": "27.3.1",
+    "jest": "27.4.5",
     "jest-dom": "^4.0.0",
     "jest-watch-typeahead": "1.0.0",
-    "miragejs": "^0.1.42",
+    "miragejs": "^0.1.43",
     "postcss-flexbugs-fixes": "5.0.2",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.1.0",
     "react-test-renderer": "17.0.2"
   }
 }
