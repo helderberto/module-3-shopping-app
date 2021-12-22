@@ -7,10 +7,15 @@ export default function CartItem({ product }) {
 
   const increase = () => setQuantity((prev) => prev + 1);
 
+  if (!product) {
+    return null;
+  }
+
   return (
     <div data-testid="cart-item" className="flex justify-between mt-6">
       <div className="flex">
         <img className="h-20 w-20 object-cover rounded" src={product.image} alt={product.title} />
+
         <div className="mx-3">
           <h3 className="text-sm text-gray-600">{product.title}</h3>
           <div className="flex items-center mt-2">
