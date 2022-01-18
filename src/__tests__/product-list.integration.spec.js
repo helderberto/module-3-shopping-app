@@ -56,7 +56,7 @@ describe('<ProductList />', () => {
     });
   });
 
-  it('should filter the product list when a search is performed', async () => {
+  it('should display proper quantity when list is filtered', async () => {
     const searchTerm = 'Beautiful Rolex';
 
     server.createList('product', 2);
@@ -68,7 +68,7 @@ describe('<ProductList />', () => {
     renderProductList();
 
     await waitFor(() => {
-      expect(screen.getAllByTestId('product-card')).toHaveLength(3);
+      expect(screen.getByText(/3 Products/i)).toBeInTheDocument();
     });
 
     const form = screen.getByRole('form');
@@ -78,7 +78,7 @@ describe('<ProductList />', () => {
     fireEvent.submit(form);
 
     await waitFor(() => {
-      expect(screen.getAllByTestId('product-card')).toHaveLength(1);
+      expect(screen.getByText(/1 Product$/i)).toBeInTheDocument();
     });
   });
 
