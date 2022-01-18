@@ -88,9 +88,17 @@ describe('<ProductList />', () => {
     renderProductList();
 
     await waitFor(() => {
-      expect(screen.getByText(/10 products/i)).toBeInTheDocument();
+      expect(screen.getByText(/10 Products/i)).toBeInTheDocument();
     });
   });
 
-  it.todo('should display product (singular) when there is only 1 product');
+  it('should display product (singular) when there is only 1 product', async () => {
+    server.create('product', 1);
+
+    renderProductList();
+
+    await waitFor(() => {
+      expect(screen.getByText(/1 Product$/i)).toBeInTheDocument();
+    });
+  });
 });

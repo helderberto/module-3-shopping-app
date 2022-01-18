@@ -1,5 +1,5 @@
 import { useFetchProducts } from '../hooks/use-fetch-products';
-import { ProductList, Search, ServerErrorMessage } from '../components';
+import { ProductList, Search, ServerErrorMessage, ProductQuantity } from '../components';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -17,14 +17,12 @@ export default function Home() {
     }
   }, [products, term]);
 
-  const doSearch = () => {};
-
   return (
     <main data-testid="product-list" className="my-8">
       <Search doSearch={(term) => setTerm(term)} />
       <div className="container mx-auto px-6">
         <h3 className="text-gray-700 text-2xl font-medium">Wrist Watch</h3>
-        <span className="mt-3 text-sm text-gray-500">{localProducts.length} Products</span>
+        <ProductQuantity products={localProducts} />
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
           <ServerErrorMessage error={error} />
 
