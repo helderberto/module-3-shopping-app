@@ -7,10 +7,6 @@ export default function CartItem({ product }) {
 
   const increase = () => setQuantity((prev) => prev + 1);
 
-  if (!product) {
-    return null;
-  }
-
   return (
     <div data-testid="cart-item" className="flex justify-between mt-6">
       <div className="flex">
