@@ -6,7 +6,7 @@ import { Factory } from 'miragejs';
 /*
  * Faker Github repository: https://github.com/faker-js/faker#readme
  */
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 import { randomNumber } from './utils';
 
