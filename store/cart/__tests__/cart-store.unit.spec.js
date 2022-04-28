@@ -1,7 +1,18 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { useCartStore } from '..';
+import { makeServer } from '../../../miragejs/server';
 
 describe('useCartStore', () => {
+  let server;
+
+  beforeEach(() => {
+    server = makeServer({ environment: 'test' });
+  });
+
+  afterEach(() => {
+    server.shutdown();
+  });
+
   it('should return state open equals to falsy on initial state', () => {
     const { result } = renderHook(() => useCartStore());
 
@@ -13,6 +24,21 @@ describe('useCartStore', () => {
 
     expect(result.current.state.products).toHaveLength(0);
     expect(Array.isArray(result.current.state.products)).toBe(true);
+  });
+
+  it('should add products to cart store', async () => {
+    const products = server.createList('product', 2);
+
+    const { result } = renderHook(() => useCartStore());
+    const {
+      actions: { add },
+    } = result.current;
+
+    for (const product in products) {
+      act(() => add(product));
+    }
+
+    expect(result.current.state.products).toHaveLength(2);
   });
 
   it('should toggle open state', () => {
