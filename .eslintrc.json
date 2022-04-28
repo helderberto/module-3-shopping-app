@@ -1,4 +1,10 @@
 {
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
   "env": {
     "browser": true,
     "es2021": true,
@@ -6,12 +12,6 @@
     "jest": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
-  "settings": {
-"react": {
-      "pragma": "React",
-      "version": "detect",
-    },
-  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -19,6 +19,5 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
-  "rules": {}
+  "plugins": ["react"]
 }
