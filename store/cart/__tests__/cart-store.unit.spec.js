@@ -8,6 +8,13 @@ describe('useCartStore', () => {
     expect(result.current.state.open).toBe(false);
   });
 
+  it('should return an empty array of products on initial state', () => {
+    const { result } = renderHook(() => useCartStore());
+
+    expect(result.current.state.products).toHaveLength(0);
+    expect(Array.isArray(result.current.state.products)).toBe(true);
+  });
+
   it('should toggle open state', () => {
     const { result } = renderHook(() => useCartStore());
     // I get only the method toggle() because the value of open will be mutated and can't be destructured.
