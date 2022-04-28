@@ -12,7 +12,8 @@
     "test:watch": "jest --watchAll --maxWorkers=25%",
     "test:coverage": "jest --coverage",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@tailwindcss/ui": "0.7.2",
@@ -35,12 +36,22 @@
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "13.5.0",
     "babel-jest": "27.5.1",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "husky": ">=6",
     "jest": "27.5.1",
     "jest-dom": "^4.0.0",
     "jest-watch-typeahead": "1.0.0",
+    "lint-staged": ">=10",
     "miragejs": "0.1.43",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "^7.4.1",
+    "prettier": "^2.6.2",
     "react-test-renderer": "17.0.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
