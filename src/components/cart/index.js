@@ -3,7 +3,7 @@ import CartItem from '../cart-item';
 
 export default function Cart() {
   const {
-    state: { open },
+    state: { open, products },
     actions: { toggle },
   } = useCartStore((store) => store);
 
@@ -30,7 +30,9 @@ export default function Cart() {
         </button>
       </div>
       <hr className="my-3" />
-      <CartItem />
+      {products.map((product) => (
+        <CartItem product={product} key={product.id} />
+      ))}
       <div className="mt-8">
         <form className="flex items-center justify-center">
           <input className="form-input w-48" type="text" placeholder="Add promocode" />
