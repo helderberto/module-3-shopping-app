@@ -2,8 +2,12 @@ import { act, renderHook } from '@testing-library/react-hooks/dom';
 import { render, screen } from '@testing-library/react';
 import { useCartStore } from '../../../../store/cart';
 import { makeServer } from '../../../../miragejs/server';
+import { setAutoFreeze } from 'immer';
 import userEvent from '@testing-library/user-event';
 import Cart from '..';
+
+// Avoid freezing "toggle" method by Immer it causes issues with spyOn()
+setAutoFreeze(false);
 
 describe('<Cart />', () => {
   let server;
