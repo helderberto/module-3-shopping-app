@@ -35,8 +35,8 @@ export default function Cart() {
         </button>
       </div>
       <hr className="my-3" />
-      {products.map((product) => (
-        <CartItem product={product} key={product.id} />
+      {products.map((product, index) => (
+        <CartItem product={product} key={`product-item-${index}`} />
       ))}
       <div className="mt-8">
         <form className="flex items-center justify-center">
