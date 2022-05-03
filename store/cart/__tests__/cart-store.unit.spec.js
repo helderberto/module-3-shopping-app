@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { useCartStore } from '..';
 import { makeServer } from '../../../miragejs/server';
 
-describe('useCartStore', () => {
+describe('Cart Store', () => {
   let server;
   let result;
   let add;
