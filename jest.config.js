@@ -5,6 +5,11 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
-  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
+  collectCoverageFrom: [
+    '<rootDir>/src/components/**/*.js',
+    '<rootDir>/src/pages/**/*.js',
+    '<rootDir>/src/hooks/**/*.js',
+    '<rootDir>/store/**/*.js',
+  ],
   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 };
