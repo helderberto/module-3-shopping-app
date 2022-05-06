@@ -11,6 +11,7 @@
     "test:integration:watch": "jest --config=jest-integration.config.js --watchAll --maxWorkers=50%",
     "test:watch": "jest --watchAll --maxWorkers=25%",
     "test:coverage": "jest --coverage",
+    "check:coverage": "npx http-server ./coverage/lcov-report",
     "build": "next build",
     "start": "next start",
     "prepare": "husky install"
@@ -40,6 +41,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "http-server": "^14.1.0",
     "husky": ">=6",
     "jest": "27.5.1",
     "jest-dom": "^4.0.0",
