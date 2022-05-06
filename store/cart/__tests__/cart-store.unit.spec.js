@@ -36,7 +36,7 @@ describe('Cart Store', () => {
   it('should add 2 products to the list and open the cart', () => {
     const products = server.createList('product', 2);
 
-    for (const product in products) {
+    for (const product of products) {
       act(() => add(product));
     }
 
@@ -87,7 +87,7 @@ describe('Cart Store', () => {
     const products = server.createList('product', 2);
 
     act(() => {
-      for (const product in products) {
+      for (const product of products) {
         add(product);
       }
     });

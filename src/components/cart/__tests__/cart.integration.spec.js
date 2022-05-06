@@ -63,7 +63,7 @@ describe('<Cart />', () => {
     const products = server.createList('product', 2);
 
     act(() => {
-      for (const product in products) {
+      for (const product of products) {
         add(product);
       }
     });
