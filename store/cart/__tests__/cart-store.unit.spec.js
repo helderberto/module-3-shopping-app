@@ -8,6 +8,7 @@ describe('Cart Store', () => {
   let add;
   let toggle;
   let increase;
+  let decrease;
   let remove;
   let removeAll;
 
@@ -17,6 +18,7 @@ describe('Cart Store', () => {
     add = result.current.actions.add;
     toggle = result.current.actions.toggle;
     increase = result.current.actions.increase;
+    decrease = result.current.actions.decrease;
     remove = result.current.actions.remove;
     removeAll = result.current.actions.removeAll;
   });
@@ -65,6 +67,29 @@ describe('Cart Store', () => {
     });
 
     expect(result.current.state.products[0].quantity).toBe(2);
+  });
+
+  it('should decreasse product quantity', () => {
+    const product = server.create('product');
+
+    act(() => {
+      add(product);
+      decrease(product);
+    });
+
+    expect(result.current.state.products[0].quantity).toBe(0);
+  });
+
+  it('should NOT decrease product quantity below zero', () => {
+    const product = server.create('product');
+
+    act(() => {
+      add(product);
+      decrease(product);
+      decrease(product);
+    });
+
+    expect(result.current.state.products[0].quantity).toBe(0);
   });
 
   it('should not add a product twice', () => {
