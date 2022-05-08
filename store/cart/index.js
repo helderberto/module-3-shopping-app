@@ -22,8 +22,20 @@ export const useCartStore = create((set) => {
           const doesntExists = !state.products.find(({ id }) => id === product.id);
 
           if (doesntExists) {
+            if (!product.quantity) {
+              product.quantity = 1;
+            }
             state.products.push(product);
             state.open = true;
+          }
+        });
+      },
+      increase(product) {
+        setState(({ state }) => {
+          const localProduct = state.products.find(({ id }) => id === product.id);
+
+          if (localProduct) {
+            localProduct.quantity++;
           }
         });
       },

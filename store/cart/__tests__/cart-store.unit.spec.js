@@ -7,6 +7,7 @@ describe('Cart Store', () => {
   let result;
   let add;
   let toggle;
+  let increase;
   let remove;
   let removeAll;
 
@@ -15,6 +16,7 @@ describe('Cart Store', () => {
     result = renderHook(() => useCartStore()).result;
     add = result.current.actions.add;
     toggle = result.current.actions.toggle;
+    increase = result.current.actions.increase;
     remove = result.current.actions.remove;
     removeAll = result.current.actions.removeAll;
   });
@@ -42,6 +44,27 @@ describe('Cart Store', () => {
 
     expect(result.current.state.products).toHaveLength(2);
     expect(result.current.state.open).toBe(true);
+  });
+
+  it('should assign 1 as initial quantity on product add()', () => {
+    const product = server.create('product');
+
+    act(() => {
+      add(product);
+    });
+
+    expect(result.current.state.products[0].quantity).toBe(1);
+  });
+
+  it('should increase product quantity', () => {
+    const product = server.create('product');
+
+    act(() => {
+      add(product);
+      increase(product);
+    });
+
+    expect(result.current.state.products[0].quantity).toBe(2);
   });
 
   it('should not add a product twice', () => {
